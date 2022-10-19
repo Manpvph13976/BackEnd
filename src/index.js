@@ -1,3 +1,4 @@
+const cors = require("cors")
 const jsonServer = require("json-server");
 const auth = require("json-server-auth");
 const path = require("path");
@@ -10,6 +11,7 @@ server.db = router.db;
 
 const rules = auth.rewriter({
 });
+server.use(cors())
 server.use(rules);
 server.use(auth);
 
